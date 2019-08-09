@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="app">
+      <form action="about:blank" method="get">
+        <div class="panel panel-primary">
+          <div class="panel-body">
+            <div class="row" data-toggle="period">
+              <div class="col-sm-8">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <div class="form-group">
+                      <div class="input-group date" data-toggle="startdate">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="input-startdate"
+                        />
+                        <span class="input-group-addon"
+                          ><i class="glyphicon glyphicon-calendar"></i
+                        ></span>
+                      </div>
+                      <!-- //.date -->
+                    </div>
+                    <!-- //.form-group[시작일]-->
+                  </div>
+                  <div class="col-xs-6">
+                    <div class="form-group">
+                      <div class="input-group date" data-toggle="enddate">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="input-enddate"
+                        />
+                        <span class="input-group-addon"
+                          ><i class="glyphicon glyphicon-calendar"></i
+                        ></span>
+                      </div>
+                      <!-- //.date -->
+                    </div>
+                    <!-- //.form-group[종료일]-->
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="btn-group" role="group">
+                  <button
+                    class="btn btn-default"
+                    data-value="0"
+                    data-toggle="assign"
+                  >
+                    오늘
+                  </button>
+                  <button
+                    class="btn btn-default"
+                    data-value="30"
+                    data-toggle="assign"
+                  >
+                    1개월
+                  </button>
+                  <button
+                    class="btn btn-default"
+                    data-value="365"
+                    data-toggle="assign"
+                  >
+                    1년
+                  </button>
+                </div>
+                <!-- //.btn-group [오늘/1개월/1년] -->
+              </div>
+            </div>
+            <!-- //.row[data-toggle="period"] -->
+          </div>
+        </div>
+      </form>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+      integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ko.min.js"></script>
+    <script src="src/index.js"></script>
+  </body>
+</html>
