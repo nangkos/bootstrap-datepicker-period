@@ -1,14 +1,15 @@
-/* import $ from "jquery";
-import moment from "moment";
-import "bootstrap-datepicker";
-import "bootstrap-datepicker/dist/locales/bootstrap-datepicker.ko.min.js"; */
+// import $ from "jquery";
+// import moment from "moment";
+// import "bootstrap-datepicker";
+// import "bootstrap-datepicker/dist/locales/bootstrap-datepicker.ko.min.js";
 
 (function() {
   $(".input-group.date").datepicker({
     language: "ko",
     format: "yyyy-mm-dd",
     clearBtn: true,
-    todayHighlight: true
+    todayHighlight: true,
+    autoclose: true
   });
 
   $('[data-toggle="period"]')
@@ -72,9 +73,13 @@ import "bootstrap-datepicker/dist/locales/bootstrap-datepicker.ko.min.js"; */
         _value_ = _$self.data("value"),
         _start_ = "",
         _end_ = "";
-      switch (parseInt(_value_, 10)) {
+      var _interval_ = parseInt(_value_, 10);
+      switch (_interval_) {
         case 0:
-          _start_ = moment().format("YYYY-MM-DD");
+        case -1:
+          _start_ = moment()
+            .add(_interval_, "d")
+            .format("YYYY-MM-DD");
           _end_ = _start_;
           break;
         case 30:
@@ -93,8 +98,14 @@ import "bootstrap-datepicker/dist/locales/bootstrap-datepicker.ko.min.js"; */
           break;
       }
 
-      _$container
-        .trigger("setDate.dw.start", _start_)
-        .trigger("setDate.dw.end", _end_);
+      if (_interval_ === -1) {
+        _$container
+          .trigger("setDate.dw.start", _start_)
+          .trigger("setDate.dw.end", _end_);
+      } else {
+        _$container
+          .trigger("setDate.dw.end", _end_)
+          .trigger("setDate.dw.start", _start_);
+      }
     });
 })();
